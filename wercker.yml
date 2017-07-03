@@ -24,11 +24,11 @@ deploy-pre-release:
           echo "---\n:rubygems_api_key: $GEM_API_KEY\n" >> ~/.gem/credentials
           chmod 0600 ~/.gem/credentials
     - script:
-        name: configure bump
+        name: configure bump and tag
         code: |
           cat ~/.gem/credentials
           bundle exec gem bump -v pre -k ~/.gem/credentials
     - script:
-        name: configure bump
+        name: configure release
         code: |
-          bundle exec gem release
+          bundle exec gem release -k ~/.gem/credentials -t
