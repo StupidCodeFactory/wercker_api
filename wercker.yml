@@ -5,3 +5,18 @@ build:
     - script:
         name: rspec
         code: bundle exec rspec
+deploy-pre-release:
+  steps:
+    - bundle-install
+    - script:
+        name: configure gem
+        code: |
+          echo "---\n:rubygems_api_key: $GEM_API_KEY\n" >> ~/.gem/credentials
+    - script:
+        name: configure bump
+        code: |
+          gem bump -v pre
+    - script:
+        name: configure bump
+        code: |
+          gem release

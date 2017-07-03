@@ -16,25 +16,30 @@ EOM
 
     API_ENDPOINT = URI('https://app.wercker.com').freeze
 
-    def initialize(token = nil)
+    def initialize(token = nil, api_version = 'v3')
       self.api_token = token || ENV['WERCKER_API_TOKEN']
       raise_token_nil_error if api_token.nil?
+      self.api_version = api_version
     end
 
     def applications(user_name, params = {})
-      request build_get_request(Application::INDEX['v3', user_name], params), ApplicationCollection
+      request build_get_request(Application::INDEX[api_version, user_name], params), ApplicationCollection
     end
 
     def application(user_name, application)
-      request build_get_request(Application::SHOW['v3', user_name, application]), Application
+      request build_get_request(Application::SHOW[api_version, user_name, application]), Application
     end
 
     def update_application(user_name, application, branches)
-      request build_put_request(Application::SHOW['v3', user_name, application], { ignoredBranches: branches }), Application
+      request build_put_request(Application::SHOW[api_version, user_name, application], { ignoredBranches: branches }), Application
+    end
+
+    def application_builds(user_name , application)
+      request build_get_request(Application::Build::INDEX[api_version, user_name, application]), Application::BuildCollection
     end
 
     private
-    attr_accessor :api_token
+    attr_accessor :api_token, :api_version
 
     def http_client
       @http_client ||= build_http_client

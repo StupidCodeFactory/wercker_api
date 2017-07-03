@@ -5,6 +5,7 @@ RSpec.describe WerckerAPI::Client do
   subject { described_class.new(token) }
   let(:token) { nil }
 
+
   describe '#initialize' do
     let(:token) { 'some_token' }
     context 'given an API token' do
@@ -30,32 +31,43 @@ EOM
     end
   end
 
-  describe 'GET #applications' do
-    let(:user_name) { 'StupidCodeFactory' }
-
-    it 'fetches applications', vcr: { cassette_name: :fetch_applications } do
-      expect(subject.applications(user_name)).to all(be_instance_of(WerckerAPI::Application))
-    end
-  end
-
-  describe 'GET #application' do
+  describe 'API' do
     let(:user_name)   { 'StupidCodeFactory' }
     let(:application) { 'wercker_api' }
 
-    it 'fetches an application', vcr: { cassette_name: :fetch_application } do
-      expect(subject.application(user_name, application)).to be_instance_of(WerckerAPI::Application)
+    describe 'GET #applications' do
+      it 'fetches applications', vcr: { cassette_name: :fetch_applications } do
+        expect(subject.applications(user_name)).to all(be_instance_of(WerckerAPI::Application))
+      end
     end
-  end
 
-  describe 'PUT #application' do
-    let(:user_name)   { 'StupidCodeFactory' }
-    let(:application) { 'wercker_api' }
-    let(:branches)    { ['a-dummy-branch']  }
+    describe 'GET #application' do
+      it 'fetches an application', vcr: { cassette_name: :fetch_application } do
+        expect(subject.application(user_name, application)).to be_instance_of(WerckerAPI::Application)
+      end
+    end
 
-    it 'updates the ignored branche', vcr: { cassette_name: :update_application } do
-      expect {
-        subject.update_application(user_name, application, branches)
-      }.to change { subject.application(user_name, application).settings.ignored_branches }.from([]).to(['a-dummy-branch'])
+    describe 'PUT #application' do
+      let(:branches)    { ['a-dummy-branch']  }
+
+      it 'updates the ignored branche', vcr: { cassette_name: :update_application } do
+        expect {
+          subject.update_application(user_name, application, branches)
+        }.to change { subject.application(user_name, application).settings.ignored_branches }.from([]).to(['a-dummy-branch'])
+      end
+
+    end
+
+    describe 'GET #application_buils' do
+      it 'fetches application builds', vcr: { cassette_name: :application_builds } do
+        expect(subject.application_builds(user_name, application)).to all(be_instance_of(WerckerAPI::Application::BuildCollection))
+      end
+    end
+
+    describe 'GET #application_deploys' do
+      it 'fetches application builds', vcr: { cassette_name: :application_builds } do
+        expect(subject.application_builds(user_name, application)).to all(be_instance_of(WerckerAPI::Application::BuildCollection))
+      end
     end
 
   end
