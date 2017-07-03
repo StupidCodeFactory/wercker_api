@@ -24,7 +24,7 @@ deploy-pre-release:
         name: configure gem
         code: |
           echo -e  "---
-:rubygems_api_key: 2bb391e1afb95eb6e189a71bf7f2808f
+:rubygems_api_key:
 " >> ~/.gem/credentials
           chmod 0600 ~/.gem/credentials
     - script:
@@ -35,4 +35,4 @@ deploy-pre-release:
     - script:
         name: configure release
         code: |
-          bundle exec gem release -t
+          curl --data-binary @$(ls -1 *gem) -H 'Authorization: 2bb391e1afb95eb6e189a71bf7f2808f' https://rubygems.org/api/v1/gems
