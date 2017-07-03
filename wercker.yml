@@ -13,6 +13,7 @@ deploy-pre-release:
         code: |
           git config --global user.email "ymarquet@gmail.com"
           git config --global user.name "StupidCodefactory"
+          git push --set-upstream origin master
     - add-ssh-key:
         keyname: GITHUB
     # - wercker/add-to-known_hosts@2.0.1:
