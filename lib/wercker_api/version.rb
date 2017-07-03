@@ -1,3 +1,3 @@
 module WerckerAPI
-  VERSION = "0.1.1.pre6"
+  VERSION = "0.1.2.pre"
 end

@@ -21,16 +21,11 @@ deploy-pre-release:
           git config --global user.name "StupidCodefactory"
           git push --set-upstream origin master
     - script:
-        name: configure gem
+        name: gem build
         code: |
-          echo -e  "---\n:rubygems_api_key: $GEM_API_KEY" >> ~/.gem/credentials
-          chmod 0600 ~/.gem/credentials
-    - script:
-        name: configure bump and tag
-        code: |
-          cat ~/.gem/credentials
-          bundle exec gem bump -v pre
+          rake build
     - script:
         name: configure release
         code: |
-          curl --data-binary @$(ls -1 *.gem) -H "Authorization: $GEM_API_KEY" https://rubygems.org/api/v1/gems
+          rake release
+          # curl --data-binary @$(ls -1 *.gem) -H "Authorization: $GEM_API_KEY" https://rubygems.org/api/v1/gems
