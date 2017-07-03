@@ -21,7 +21,7 @@ deploy-pre-release:
     - script:
         name: configure gem
         code: |
-          echo "---\n:rubygems_api_key: $GEM_API_KEY\n" >> ~/.gem/credentials
+          printf "---\n:rubygems_api_key: $GEM_API_KEY\n" >> ~/.gem/credentials
           chmod 0600 ~/.gem/credentials
     - script:
         name: configure bump and tag
