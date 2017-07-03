@@ -19,14 +19,18 @@ deploy-pre-release:
         code: |
           git config --global user.email "ymarquet@gmail.com"
           git config --global user.name "StupidCodefactory"
-          git config --global push.default simple
-          git branch --set-upstream master origin/master
-          git branch
+          git push --set-upstream origin master
     - script:
-        name: gem build
+        name: configure gem
         code: |
-          rake build
+          echo -e  "---\n:rubygems_api_key: $GEM_API_KEY" >> ~/.gem/credentials
+          chmod 0600 ~/.gem/credentials
+    - script:
+        name: configure bump and tag
+        code: |
+          bundle exec gem bump -v pre
     - script:
         name: configure release
         code: |
-          rake --trace release[origin]
+          rake build
+          rake release
