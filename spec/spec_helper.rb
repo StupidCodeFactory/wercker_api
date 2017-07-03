@@ -1,5 +1,6 @@
 require "bundler/setup"
 require "wercker_api"
+require "rspec/collection_matchers"
 require "byebug"
 require "webmock"
 require "ap"

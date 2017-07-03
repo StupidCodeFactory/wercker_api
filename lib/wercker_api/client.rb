@@ -16,13 +16,17 @@ EOM
 
     API_ENDPOINT = URI('https://app.wercker.com').freeze
 
-    def initialize(token)
+    def initialize(token = nil)
       self.api_token = token || ENV['WERCKER_API_TOKEN']
       raise_token_nil_error if api_token.nil?
     end
 
     def applications(user_name, params = {})
       get build_get_request(Application::INDEX['v3', user_name], params), ApplicationCollection
+    end
+
+    def application(user_name, application)
+      get build_get_request(Application::SHOW['v3', user_name, application]), Application
     end
 
     private
@@ -43,7 +47,7 @@ EOM
       raise ArgumentError.new(msg)
     end
 
-    def build_get_request(uri, params = {}, call)
+    def build_get_request(uri, params = {})
       uri = URI::HTTP.build(path: uri, query: URI.encode_www_form(params))
       authorise_request(Net::HTTP::Get.new(uri))
     end

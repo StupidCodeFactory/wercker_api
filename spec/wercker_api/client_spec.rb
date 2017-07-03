@@ -3,6 +3,7 @@ require 'spec_helper'
 RSpec.describe WerckerAPI::Client do
 
   subject { described_class.new(token) }
+  let(:token) { nil }
 
   describe '#initialize' do
     let(:token) { 'some_token' }
@@ -30,11 +31,19 @@ EOM
   end
 
   describe '#applications' do
-    let(:token) { nil }
     let(:user_name) { 'StupidCodeFactory' }
 
     it 'fetches applications', vcr: { cassette_name: :fetch_applications } do
-      expect(subject.applications(user_name)).to eq(WerckerAPI::ApplicationCollection.new)
+      expect(subject.applications(user_name)).to all(be_instance_of(WerckerAPI::Application))
+    end
+  end
+
+  describe '#application' do
+    let(:user_name)   { 'StupidCodeFactory' }
+    let(:application) { 'wercker_api' }
+
+    it 'fetches an application', vcr: { cassette_name: :fetch_application } do
+      expect(subject.application(user_name, application)).to be_instance_of(WerckerAPI::Application)
     end
   end
 end
