@@ -32,5 +32,6 @@ deploy-pre-release:
     - script:
         name: configure release
         code: |
+          set -x
           rake build
-          rake release
+          rake --trace release
