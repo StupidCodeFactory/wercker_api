@@ -1,3 +1,4 @@
+require "virtus"
 require "wercker_api/version"
 require "wercker_api/client"
 require "wercker_api/application"
