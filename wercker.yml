@@ -1,4 +1,4 @@
-box: ruby:2.4.1-alpine
+box: ruby:2.4.1
 build:
   steps:
     - bundle-install
