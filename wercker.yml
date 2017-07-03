@@ -10,6 +10,9 @@ deploy-pre-release:
     - bundle-install
     - add-ssh-key:
         keyname: GITHUB
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: 56:8a:47:fe:6f:a0:9b:66:35:ab:7a:3a:10:30:12:9f
     - script:
         name: configure git
         code: |
