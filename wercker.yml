@@ -14,7 +14,7 @@ deploy-pre-release:
           git config --global user.email "ymarquet@gmail.com"
           git config --global user.name "StupidCodefactory"
     - add-ssh-key:
-        keyname: GITHUB
+        keyname: GITHUB_KEY
     - wercker/add-to-known_hosts@2.0.1:
         hostname: github.com
         fingerprint: 4d:de:af:f1:29:53:df:e1:26:f9:92:b9:cc:dc:e3:07
