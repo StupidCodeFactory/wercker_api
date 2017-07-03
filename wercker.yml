@@ -21,6 +21,7 @@ deploy-pre-release:
           git config --global user.name "StupidCodefactory"
           git config --global push.default simple
           git branch --set-upstream master origin/master
+          git branch
     - script:
         name: gem build
         code: |
