@@ -17,10 +17,8 @@ deploy-pre-release:
     - script:
         name: configure git
         code: |
-          cat ~/.ssh/config
           git config --global user.email "ymarquet@gmail.com"
           git config --global user.name "StupidCodefactory"
-          ssh -T git@github.com
           git push --set-upstream origin master
     - script:
         name: configure gem
