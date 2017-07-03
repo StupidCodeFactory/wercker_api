@@ -1,5 +1,5 @@
 require "wercker_api/version"
 
-module WerckerApi
+module WerckerAPI
   # Your code goes here...
 end
