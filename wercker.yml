@@ -10,9 +10,11 @@ deploy-pre-release:
     - bundle-install
     - add-ssh-key:
         keyname: GITHUB_KEY
-    - add-to-known_hosts:
+    - wercker/add-to-known_hosts@2.0.1:
         hostname: github.com
         fingerprint: 82:84:0b:a7:f2:30:6a:42:ef:77:d4:ef:e1:f1:d8:78
+        local: true
+        type: rsa
     - script:
         name: configure git
         code: |
