@@ -22,11 +22,15 @@ EOM
     end
 
     def applications(user_name, params = {})
-      get build_get_request(Application::INDEX['v3', user_name], params), ApplicationCollection
+      request build_get_request(Application::INDEX['v3', user_name], params), ApplicationCollection
     end
 
     def application(user_name, application)
-      get build_get_request(Application::SHOW['v3', user_name, application]), Application
+      request build_get_request(Application::SHOW['v3', user_name, application]), Application
+    end
+
+    def update_application(user_name, application, branches)
+      request build_put_request(Application::SHOW['v3', user_name, application], { ignoredBranches: branches }), Application
     end
 
     private
@@ -52,6 +56,13 @@ EOM
       authorise_request(Net::HTTP::Get.new(uri))
     end
 
+    def build_put_request(uri, params)
+      request      = Net::HTTP::Patch.new(URI::HTTP.build(path: uri))
+      request.body = JSON.dump(params)
+      request['Content-Type'] = 'application/json'
+      authorise_request(request)
+    end
+
     def authorise_request(request)
       request['Authorization'] = "Bearer #{api_token}"
       request
@@ -63,9 +74,8 @@ EOM
       http_client
     end
 
-    def get(request, serializer)
-      response = http_client.request(request)
-      handle(response, serializer)
+    def request(request, serializer)
+      handle(http_client.request(request), serializer)
     end
 
     def handle(response, klass)

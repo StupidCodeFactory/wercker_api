@@ -30,7 +30,7 @@ EOM
     end
   end
 
-  describe '#applications' do
+  describe 'GET #applications' do
     let(:user_name) { 'StupidCodeFactory' }
 
     it 'fetches applications', vcr: { cassette_name: :fetch_applications } do
@@ -38,12 +38,25 @@ EOM
     end
   end
 
-  describe '#application' do
+  describe 'GET #application' do
     let(:user_name)   { 'StupidCodeFactory' }
     let(:application) { 'wercker_api' }
 
     it 'fetches an application', vcr: { cassette_name: :fetch_application } do
       expect(subject.application(user_name, application)).to be_instance_of(WerckerAPI::Application)
     end
+  end
+
+  describe 'PUT #application' do
+    let(:user_name)   { 'StupidCodeFactory' }
+    let(:application) { 'wercker_api' }
+    let(:branches)    { ['a-dummy-branch']  }
+
+    it 'updates the ignored branche', vcr: { cassette_name: :update_application } do
+      expect {
+        subject.update_application(user_name, application, branches)
+      }.to change { subject.application(user_name, application).settings.ignored_branches }.from([]).to(['a-dummy-branch'])
+    end
+
   end
 end

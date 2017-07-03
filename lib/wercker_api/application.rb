@@ -4,7 +4,12 @@ module WerckerAPI
     attribute :username,        String
     attribute :type,            String
     attribute :werckerEmployee, Boolean
+
+    def wercker_employee
+      werckerEmployee
+    end
   end
+
   class Avatar
     include Virtus.model
     attribute :gravatar, String
@@ -17,6 +22,10 @@ module WerckerAPI
     attribute :name,   String
     attribute :avatar, Avatar
     attribute :meta,   Meta
+
+    def user_id
+      userId
+    end
   end
 
   class SCM
@@ -32,6 +41,10 @@ module WerckerAPI
     attribute :privacy,         String
     attribute :stack,           Integer
     attribute :ignoredBranches, Array[String]
+
+    def ignored_branches
+      ignoredBranches
+    end
   end
 
   class Application
@@ -52,5 +65,22 @@ module WerckerAPI
     attribute :allowedActions, Array[String]
     attribute :theme,          String
     attribute :settings,       Settings
+
+    def badge_key
+      badgeKey
+    end
+
+    def created_at
+      createdAt
+    end
+
+    def updated_at
+      updatedAt
+    end
+
+    def allowed_actions
+      allowedActions
+    end
+
   end
 end
