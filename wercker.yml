@@ -26,6 +26,7 @@ deploy-pre-release:
     - script:
         name: configure bump
         code: |
+          cat ~/.gem/credentials
           bundle exec gem bump -v pre
     - script:
         name: configure bump
