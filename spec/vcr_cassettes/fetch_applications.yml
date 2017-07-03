@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/applications/StupidCodeFactory
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 03 Jul 2017 18:23:58 GMT
+      Etag:
+      - W/"F4opqCLG/IoDdLZGhLVcIg=="
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3AMnfrzBnaKNUhsRlgEQseTJQJ9HkkKAPO.Z47O97Pk0t2i1e5KSPdH56vWHTAK2If6POk0OdNqbK4;
+        Path=/; Expires=Mon, 17 Jul 2017 18:23:58 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"594aedd91ce558010003ee60","url":"https://app.wercker.com/api/v3/applications/stupidcodefactory/ecs-deploy","name":"ecs-deploy","owner":{"type":"wercker","name":"yann","avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user","werckerEmployee":false}},"createdAt":"2017-06-21T22:06:17.238Z","updatedAt":"2017-07-02T14:46:11.297Z","privacy":"public","stack":1,"theme":"Appletini"},{"id":"56a4dfb4212b43b24e0b6632","url":"https://app.wercker.com/api/v3/applications/stupidcodefactory/events_app","name":"events_app","owner":{"type":"wercker","name":"yann","avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user","werckerEmployee":false}},"createdAt":"2016-01-24T14:29:08.775Z","updatedAt":"2016-09-07T17:55:19.260Z","privacy":"private","stack":6,"theme":"Oranje"},{"id":"5817c00419e1920100be6435","url":"https://app.wercker.com/api/v3/applications/stupidcodefactory/uprising-software-ltd.com","name":"uprising-software-ltd.com","owner":{"type":"wercker","name":"yann","avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user","werckerEmployee":false}},"createdAt":"2016-10-31T22:04:52.324Z","updatedAt":"2017-06-20T18:45:29.585Z","privacy":"private","stack":6,"theme":"Onyx"},{"id":"595a6b1ba01812010072fc1c","url":"https://app.wercker.com/api/v3/applications/stupidcodefactory/wercker_api","name":"wercker_api","owner":{"type":"wercker","name":"yann","avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user","werckerEmployee":false}},"createdAt":"2017-07-03T16:04:43.374Z","updatedAt":"2017-07-03T16:04:43.374Z","privacy":"public","stack":6,"theme":"Amethyst"}]'
+    http_version: 
+  recorded_at: Mon, 03 Jul 2017 18:23:58 GMT
+recorded_with: VCR 3.0.3

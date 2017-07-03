@@ -11,3 +11,5 @@
 # rspec failure tracking
 .rspec_status
 .wercker
+.byebug_history
+.envrc
