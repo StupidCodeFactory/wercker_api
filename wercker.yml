@@ -20,7 +20,7 @@ deploy-pre-release:
           git config --global user.email "ymarquet@gmail.com"
           git config --global user.name "StupidCodefactory"
           git config --global push.default simple
-          git push --set-upstream origin master
+          git branch --set-upstream master origin/master
     - script:
         name: gem build
         code: |
