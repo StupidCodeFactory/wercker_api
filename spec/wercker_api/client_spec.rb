@@ -34,7 +34,7 @@ EOM
     let(:user_name) { 'StupidCodeFactory' }
 
     it 'fetches applications', vcr: { cassette_name: :fetch_applications } do
-      expect(subject.applications(user_name)).to eq([WerckerAPI::ApplicationCollection.new])
+      expect(subject.applications(user_name)).to eq(WerckerAPI::ApplicationCollection.new)
     end
   end
 end
