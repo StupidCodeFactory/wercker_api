@@ -38,6 +38,10 @@ EOM
       request build_get_request(Application::Build::INDEX[api_version, user_name, application]), Application::BuildCollection
     end
 
+    def application_deploys(user_name , application)
+      request build_get_request(Application::Deploy::INDEX[api_version, user_name, application]), Application::DeployCollection
+    end
+
     private
     attr_accessor :api_token, :api_version
 
