@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.wercker.com/api/v3/runs
+    body:
+      encoding: UTF-8
+      string: '{"pipelineId":"595a470724ac030100da3fe9"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 04 Jul 2017 17:16:52 GMT
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3ApjkB4IU6_cOO03b64gvrQE4ViJnAQRFb.62OlhFywDiNr5EBY4iqSyM4urIrQ%2Bgujq2XDkNFKD6k;
+        Path=/; Expires=Tue, 18 Jul 2017 17:16:52 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      X-Wercker-Trace-Id:
+      - 58b82ccd63f46190
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"595bcd843c2e1500019911bd","url":"https://app.wercker.com/api/v3/runs/595bcd843c2e1500019911bd","branch":"master","commitHash":"76a683e1eec39243d48264a46687398d1600ee79","createdAt":"2017-07-04
+        17:16:52.796629368 +0000 UTC","message":"werckerify app","result":"unknown","status":"notstarted","user":{"type":"wercker","name":"yann","userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"}},"pipeline":{"id":"595a470724ac030100da3fe9","url":"https://app.wercker.com/api/v3/pipelines/595a470724ac030100da3fe9","createdAt":"2017-07-03
+        13:30:47.344 +0000 UTC","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 17:16:53 GMT
+recorded_with: VCR 3.0.3
