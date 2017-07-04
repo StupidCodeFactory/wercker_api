@@ -21,31 +21,65 @@ EOM
     end
 
     def applications(user_name, params = {})
-      request build_get_request(Application::INDEX[api_version, user_name], params), ApplicationCollection
+      request(
+        build_get_request(
+          Application::INDEX[api_version, user_name], params
+        ), ApplicationCollection
+      )
     end
 
     def application(user_name, application)
-      request build_get_request(Application::SHOW[api_version, user_name, application]), Application
+      request(
+        build_get_request(
+          Application::SHOW[api_version, user_name, application]
+        ),
+        Application
+      )
     end
 
     def update_application(user_name, application, branches)
-      request build_patch_request(Application::SHOW[api_version, user_name, application], ignoredBranches: branches), Application
+      request(
+        build_patch_request(
+          Application::SHOW[api_version, user_name, application], ignoredBranches: branches
+        ),
+        Application
+      )
     end
 
     def application_builds(user_name, application)
-      request build_get_request(Application::Build::INDEX[api_version, user_name, application]), Application::BuildCollection
+      request(
+        build_get_request(
+          Application::Build::INDEX[api_version, user_name, application]
+        ),
+        Application::BuildCollection
+      )
     end
 
     def application_deploys(user_name, application)
-      request build_get_request(Application::Deploy::INDEX[api_version, user_name, application]), Application::DeployCollection
+      request(
+        build_get_request(
+          Application::Deploy::INDEX[api_version, user_name, application]
+        ),
+        Application::DeployCollection
+      )
     end
 
     def application_workflows(application_id)
-      request build_get_request(Application::Workflow::INDEX[api_version], applicationId: application_id), Application::WorkflowCollection
+      request(
+        build_get_request(
+          Application::Workflow::INDEX[api_version], applicationId: application_id
+        ),
+        Application::WorkflowCollection
+      )
     end
 
     def application_workflow(workflow_id)
-      request build_get_request(Application::Workflow::SHOW[api_version, workflow_id]), Application::Workflow
+      request(
+        build_get_request(
+          Application::Workflow::SHOW[api_version, workflow_id]
+        ),
+        Application::Workflow
+      )
     end
 
     def runs(application_id: nil, pipeline_id: nil)
