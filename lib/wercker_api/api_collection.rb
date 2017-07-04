@@ -14,7 +14,6 @@ module WerckerAPI
     end
 
     def each(&block)
-      byebug
       collection.each(&block)
     end
 

@@ -7,8 +7,8 @@ module WerckerAPI
       self.current_attempt = 0
     end
 
-    def run(pipeline_id)
-      run = client.trigger_run pipeline_id
+    def run(pipeline_id, trigger_run_params = {})
+      run = client.trigger_run pipeline_id, trigger_run_params
 
       while %w[running notstarted].include?(run.status) && !max_attempt_reached?
         sleep delay

@@ -7,6 +7,6 @@ RSpec.describe WerckerAPI::PipelineRunner do
   subject { described_class.new(client) }
 
   it 'runs the pipeline and waited until finished', vcr: { cassette_name: :run_pipeline } do
-    expect(subject.run(pipeline_id).status).to eq('finished')
+    expect(subject.run(pipeline_id, branch: 'pipeline-runner').status).to eq('finished')
   end
 end

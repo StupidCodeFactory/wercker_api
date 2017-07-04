@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/runs?pipelineId=595a6b1b24ac030100da5307
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 22:45:31 GMT
+      Etag:
+      - W/"PbdD9kmmpxI6KXNN644FvA=="
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3A3QYQ2sEMLOSqyLa_VjeS_WtqqwD7v_Er.6eSZmW7J5tQcq7h1xK1FLYAygWRWUfVi38PsrHD59%2FQ;
+        Path=/; Expires=Tue, 18 Jul 2017 22:45:31 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"595c1a2b1ee20400013bacbf","url":"https://app.wercker.com/api/v3/runs/595c1a2b1ee20400013bacbf","branch":"pipeline-runner","commitHash":"a75f56b63f7aee3b0a9e8045426704ce34155e91","createdAt":"2017-07-04T22:43:55.359Z","finishedAt":"2017-07-04T22:44:28.516Z","message":"make
+        build slower","progress":85,"result":"failed","startedAt":"2017-07-04T22:43:55.457Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c19053c2e150001996336","url":"https://app.wercker.com/api/v3/runs/595c19053c2e150001996336","branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","createdAt":"2017-07-04T22:39:01.763Z","finishedAt":"2017-07-04T22:39:16.572Z","message":"Merge
+        pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger and Abort
+        APIs","progress":87,"result":"failed","startedAt":"2017-07-04T22:39:01.792Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c18e33c2e15000199632f","url":"https://app.wercker.com/api/v3/runs/595c18e33c2e15000199632f","branch":"pipeline-runner","commitHash":"a75f56b63f7aee3b0a9e8045426704ce34155e91","createdAt":"2017-07-04T22:38:27.929Z","finishedAt":"2017-07-04T22:39:03.221Z","message":"make
+        build slower","progress":85,"result":"failed","startedAt":"2017-07-04T22:38:27.949Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c1879e7c46c00015b225f","url":"https://app.wercker.com/api/v3/runs/595c1879e7c46c00015b225f","branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","createdAt":"2017-07-04T22:36:41.296Z","finishedAt":"2017-07-04T22:36:59.999Z","message":"Merge
+        pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger and Abort
+        APIs","progress":87,"result":"failed","startedAt":"2017-07-04T22:36:41.341Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c18723c2e150001996299","url":"https://app.wercker.com/api/v3/runs/595c18723c2e150001996299","branch":"pipeline-runner","commitHash":"77d00bb5a8ce341b89c9906f1553a21af9523674","createdAt":"2017-07-04T22:36:34.231Z","finishedAt":"2017-07-04T22:36:45.574Z","message":"remove
+        codecoverage from build pipeline","progress":85,"result":"failed","startedAt":"2017-07-04T22:36:34.324Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c183a1ee20400013bac95","url":"https://app.wercker.com/api/v3/runs/595c183a1ee20400013bac95","branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","createdAt":"2017-07-04T22:35:38.523Z","finishedAt":"2017-07-04T22:35:54.126Z","message":"Merge
+        pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger and Abort
+        APIs","progress":87,"result":"failed","startedAt":"2017-07-04T22:35:38.551Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c168e3c2e15000199611b","url":"https://app.wercker.com/api/v3/runs/595c168e3c2e15000199611b","branch":"pipeline-runner","commitHash":"3dd11d2caecf632987796e5c84f2c169dcf7db71","createdAt":"2017-07-04T22:28:30.828Z","finishedAt":"2017-07-04T22:28:50.359Z","message":"remove
+        useless comments","progress":87,"result":"failed","startedAt":"2017-07-04T22:28:30.932Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c152b3c2e150001995fbb","url":"https://app.wercker.com/api/v3/runs/595c152b3c2e150001995fbb","branch":"pipeline-runner","commitHash":"31eb2445c1a486a9bb19bb4e62b441f5c34dc7c2","createdAt":"2017-07-04T22:22:35.337Z","finishedAt":"2017-07-04T22:22:49.125Z","message":"Thank
+        you rubocop","progress":87,"result":"failed","startedAt":"2017-07-04T22:22:35.459Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c145d3c2e150001995e8a","url":"https://app.wercker.com/api/v3/runs/595c145d3c2e150001995e8a","branch":"pipeline-runner","commitHash":"983d5e3bb4c4942f52c86ee693ba8cf88ebf8f1a","createdAt":"2017-07-04T22:19:09.731Z","finishedAt":"2017-07-04T22:19:31.129Z","message":"Fix
+        test","progress":87,"result":"failed","startedAt":"2017-07-04T22:19:09.761Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},{"id":"595c13d9e7c46c00015b224e","url":"https://app.wercker.com/api/v3/runs/595c13d9e7c46c00015b224e","branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","createdAt":"2017-07-04T22:16:58.110Z","finishedAt":"2017-07-04T22:17:11.849Z","message":"Merge
+        pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger and Abort
+        APIs","progress":87,"result":"failed","startedAt":"2017-07-04T22:16:58.117Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}}]'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 22:45:31 GMT
+recorded_with: VCR 3.0.3
