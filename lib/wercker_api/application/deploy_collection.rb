@@ -1,6 +1,6 @@
 module WerckerAPI
   class Application
-    class BuildCollection
+    class DeployCollection
       include APICollection
     end
   end

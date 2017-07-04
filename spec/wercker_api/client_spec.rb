@@ -65,8 +65,8 @@ EOM
     end
 
     describe 'GET #application_deploys' do
-      it 'fetches application builds', vcr: { cassette_name: :application_builds } do
-        expect(subject.application_builds(user_name, application)).to all(be_instance_of(WerckerAPI::Application::BuildCollection))
+      it 'fetches application builds', vcr: { cassette_name: :application_deploys } do
+        expect(subject.application_deploys(user_name, application)).to all(be_instance_of(WerckerAPI::Application::DeployCollection))
       end
     end
 
