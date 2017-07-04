@@ -1,7 +1,6 @@
 require 'net/http'
 require 'json'
 module WerckerAPI
-
   class WerckerAPI::Error < ArgumentError
     def initialize(response)
       json = JSON.parse(response.body)
@@ -13,7 +12,6 @@ EOM
   end
 
   class Client
-
     API_ENDPOINT = URI('https://app.wercker.com').freeze
 
     def initialize(token = nil, api_version = 'v3')
@@ -31,14 +29,14 @@ EOM
     end
 
     def update_application(user_name, application, branches)
-      request build_patch_request(Application::SHOW[api_version, user_name, application], { ignoredBranches: branches }), Application
+      request build_patch_request(Application::SHOW[api_version, user_name, application], ignoredBranches: branches), Application
     end
 
-    def application_builds(user_name , application)
+    def application_builds(user_name, application)
       request build_get_request(Application::Build::INDEX[api_version, user_name, application]), Application::BuildCollection
     end
 
-    def application_deploys(user_name , application)
+    def application_deploys(user_name, application)
       request build_get_request(Application::Deploy::INDEX[api_version, user_name, application]), Application::DeployCollection
     end
 
@@ -72,6 +70,7 @@ EOM
     end
 
     private
+
     attr_accessor :api_token, :api_version
 
     def http_client
@@ -86,7 +85,7 @@ A token is required to communicate with the API, please refer to the read me.
 
 More inforation at: http://devcenter.wercker.com/docs/api/getting-started/authentication
 EOM
-      raise ArgumentError.new(msg)
+      raise ArgumentError, msg
     end
 
     def build_get_request(uri, params = {})
@@ -140,8 +139,7 @@ EOM
     end
 
     def handle_error(response)
-      raise WerckerAPI::Error.new(response)
+      raise WerckerAPI::Error, response
     end
   end
-
 end

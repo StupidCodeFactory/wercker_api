@@ -1,5 +1,4 @@
 module WerckerAPI
-
   class Meta
     include Virtus.model
     attribute :username,        String
@@ -14,7 +13,6 @@ module WerckerAPI
   class Avatar
     include Virtus.model
     attribute :gravatar, String
-
   end
 
   class Owner
@@ -31,5 +29,4 @@ module WerckerAPI
   end
 
   class User < Owner; end
-
 end

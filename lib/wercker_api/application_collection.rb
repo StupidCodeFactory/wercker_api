@@ -1,6 +1,5 @@
 module WerckerAPI
   class ApplicationCollection
-
     include Enumerable
 
     def initialize(collection = [])
@@ -12,6 +11,7 @@ module WerckerAPI
     end
 
     private
+
     attr_accessor :collection
   end
 end

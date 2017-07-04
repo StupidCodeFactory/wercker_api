@@ -1,6 +1,5 @@
 module WerckerAPI
   module APICollection
-
     def self.included(klass)
       klass.class_eval do
         include Enumerable
@@ -10,7 +9,6 @@ module WerckerAPI
       end
     end
 
-
     def initialize(collection = [])
       self.collection = collection.map { |item| item_klass.new(item) }
     end
@@ -19,6 +17,7 @@ module WerckerAPI
       byebug
       collection.each(&block)
     end
+
     private
 
     def item_klass
