@@ -3,8 +3,16 @@ build:
   steps:
     - bundle-install
     - script:
+        name: notify CodeClimate
+        code: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+    - script:
         name: rspec
-        code: bundle exec rspec
+        code: |
+          cc-test-reporter before-build
+          bundle exec rspec
+          cc-test-reporter after-build --exit-code $?
 deploy:
   steps:
     - bundle-install
