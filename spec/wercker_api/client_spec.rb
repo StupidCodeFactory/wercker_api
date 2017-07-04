@@ -70,5 +70,19 @@ EOM
       end
     end
 
+    describe '#application_workflows' do
+      let(:application_id) { '595a6b1ba01812010072fc1c' }
+      it 'fetches application workflows', vcr: { cassette_name: :application_workflows } do
+        expect(subject.application_workflows(application_id)).to all(be_instance_of(WerckerAPI::Application::WorkflowCollection))
+      end
+    end
+
+    describe '#application_workflow' do
+      let(:workflow_id) { '595aeee73c2e150001977cad' }
+      it 'fetches application workflows', vcr: { cassette_name: :application_workflow } do
+        expect(subject.application_workflow(workflow_id)).to be_instance_of(WerckerAPI::Application::Workflow)
+      end
+    end
+
   end
 end

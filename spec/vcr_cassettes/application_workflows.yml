@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/workflows?applicationId=595a6b1ba01812010072fc1c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 09:24:48 GMT
+      Etag:
+      - W/"PLddlA05Jxk3mOH0aD0eFg=="
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3Ak0XRtXdpk1D2EwzyQk-QRwkICi_eI5i0.DwxONXolXQWG7FO%2B5BRuT7R4xesI3LbIvPT0wXFPrpE;
+        Path=/; Expires=Tue, 18 Jul 2017 09:24:48 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://app.wercker.com/api/v3/workflows/595aeee73c2e150001977cad","createdAt":"2017-07-04T01:27:03.044Z","data":{"branch":"master","commitHash":"a49e01b9a11f6941d79d4a4bce4214ef90193d02","message":"Merge
+        branch ''code-coverage''","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595aeee73c2e150001977cad","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":8,"stepName":"store","runId":"595aeee73c2e150001977cac"},"id":"595aeee73c2e150001977cae","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:27:30.640Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"totalSteps":11,"currentStep":11,"stepName":"store","runId":"595aef023c2e150001977cc3"},"id":"595aeee73c2e150001977caf","parentItem":"595aeee73c2e150001977cae","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:28:31.449Z"}],"startedAt":"2017-07-04T01:27:16.486Z","trigger":"git","updatedAt":"2017-07-04T01:28:31.447Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595aee993c2e150001977c55","createdAt":"2017-07-04T01:25:45.229Z","data":{"branch":"code-coverage","commitHash":"c5912ba0343b0547b46bed3988d47746263046bd","message":"bump","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595aee993c2e150001977c55","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595aee993c2e150001977c54"},"id":"595aee993c2e150001977c56","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:26:12.244Z"}],"startedAt":"2017-07-04T01:25:48.794Z","trigger":"git","updatedAt":"2017-07-04T01:26:12.240Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595aee5e1ee20400013b8da8","createdAt":"2017-07-04T01:24:46.946Z","data":{"branch":"master","message":"Auto
+        trigger from Pipeline \"build\" to Pipeline \"deploy\"","sourceRunId":"595aee0d3c2e150001977bd8"},"id":"595aee5e1ee20400013b8da8","items":[{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"totalSteps":11,"currentStep":10,"stepName":"configure
+        release","runId":"595aee5e1ee20400013b8da7"},"id":"595aee5e1ee20400013b8da9","progress":90,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T01:25:25.250Z"}],"startedAt":"2017-07-04T01:24:50.713Z","trigger":"workflow","updatedAt":"2017-07-04T01:25:25.247Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595aee0d3c2e150001977bd9","createdAt":"2017-07-04T01:23:25.529Z","data":{"branch":"master","commitHash":"fdfc93667c34fb940112f047afe60fc6224af851","message":"Merge
+        pull request #4 from StupidCodeFactory/code-coverage\n\nAdd a bit of doumentation","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595aee0d3c2e150001977bd9","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595aee0d3c2e150001977bd8"},"id":"595aee0d3c2e150001977bda","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:24:02.628Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"totalSteps":11,"currentStep":10,"stepName":"configure
+        release","runId":"595aee323c2e150001977bef"},"id":"595aee0d3c2e150001977bdb","parentItem":"595aee0d3c2e150001977bda","progress":90,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T01:24:32.524Z"}],"startedAt":"2017-07-04T01:23:37.388Z","trigger":"git","updatedAt":"2017-07-04T01:24:32.434Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595aed983c2e150001977b59","createdAt":"2017-07-04T01:21:28.626Z","data":{"branch":"code-coverage","commitHash":"74f0af41ca9535631ba054cb826f0d5408ddb4d7","message":"Add
+        a bit of doumentation","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595aed983c2e150001977b59","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595aed983c2e150001977b58"},"id":"595aed983c2e150001977b5a","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:21:57.237Z"}],"startedAt":"2017-07-04T01:21:39.229Z","trigger":"git","updatedAt":"2017-07-04T01:21:52.906Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595aea3d3c2e1500019777a3","createdAt":"2017-07-04T01:07:09.928Z","data":{"branch":"master","commitHash":"b05f4051d0e95febf51f646d23ac4691feb43a36","message":"Merge
+        pull request #3 from StupidCodeFactory/code-coverage\n\ndebug env","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595aea3d3c2e1500019777a3","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":8,"stepName":"store","runId":"595aea3d3c2e1500019777a2"},"id":"595aea3d3c2e1500019777a4","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:07:37.115Z"}],"startedAt":"2017-07-04T01:07:13.800Z","trigger":"git","updatedAt":"2017-07-04T01:07:37.114Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595aea1a3c2e150001977779","createdAt":"2017-07-04T01:06:34.455Z","data":{"branch":"code-coverage","commitHash":"0b628339c7af863013c5a762a8199e2e04754dc1","message":"debug
+        env","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595aea1a3c2e150001977779","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":5,"stepName":"notify
+        CodeClimate","runId":"595aea1a3c2e150001977778"},"id":"595aea1a3c2e15000197777a","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:08:56.174Z"}],"startedAt":"2017-07-04T01:06:39.106Z","trigger":"git","updatedAt":"2017-07-04T01:06:55.053Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595ae9363c2e150001977676","createdAt":"2017-07-04T01:02:46.729Z","data":{"branch":"master","commitHash":"fadb2568b3b56264b649445741b07cfd97f81e4f","message":"Merge
+        pull request #2 from StupidCodeFactory/code-coverage\n\nCode coverage","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595ae9363c2e150001977676","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":7,"currentStep":7,"stepName":"store","runId":"595ae9363c2e150001977675"},"id":"595ae9363c2e150001977677","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:03:16.924Z"}],"startedAt":"2017-07-04T01:02:50.466Z","trigger":"git","updatedAt":"2017-07-04T01:03:13.030Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595ae84e3c2e1500019775a7","createdAt":"2017-07-04T00:58:54.733Z","data":{"branch":"code-coverage","commitHash":"9b46037c0ee2fa0d71e5f921c058306c423a62f2","message":"fix
+        path","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595ae84e3c2e1500019775a7","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":7,"currentStep":7,"stepName":"store","runId":"595ae84e3c2e1500019775a6"},"id":"595ae84e3c2e1500019775a8","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:05:58.029Z"}],"startedAt":"2017-07-04T00:59:03.941Z","trigger":"git","updatedAt":"2017-07-04T00:59:11.219Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595ae8143c2e150001977556","createdAt":"2017-07-04T00:57:56.138Z","data":{"branch":"code-coverage","commitHash":"67305f6b587ceee9719b106451f554cf3aaf5554","message":"add
+        code coverage","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595ae8143c2e150001977556","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":7,"currentStep":6,"stepName":"rspec","runId":"595ae8143c2e150001977555"},"id":"595ae8143c2e150001977557","progress":85,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T00:58:27.927Z"}],"startedAt":"2017-07-04T00:58:01.915Z","trigger":"git","updatedAt":"2017-07-04T00:58:27.925Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}}]'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 09:24:48 GMT
+recorded_with: VCR 3.0.3

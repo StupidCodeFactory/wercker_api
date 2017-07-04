@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/workflows/595aeee73c2e150001977cad
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 09:28:56 GMT
+      Etag:
+      - W/"oZawlXcWfBcy5PI8MNuP5Q=="
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3Apd3-Rr9pryPDeWblMNoFEdw_dl0Pvzpn.A8%2BD%2BFrfjz2h7s1w%2F%2BkTVgAUK%2BR0Y5ndAqPU8zjDYeg;
+        Path=/; Expires=Tue, 18 Jul 2017 09:28:56 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https://app.wercker.com/api/v3/workflows/595aeee73c2e150001977cad","application":{"id":"595a6b1ba01812010072fc1c","url":"https://app.wercker.com/api/v3/applications/stupidcodefactory/wercker_api","name":"wercker_api","owner":{"type":"wercker","name":"yann","avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user","werckerEmployee":false}},"createdAt":"2017-07-03T16:04:43.374Z","updatedAt":"2017-07-03T20:29:42.731Z","privacy":"public","stack":6,"theme":"Amethyst"},"createdAt":"2017-07-04T01:27:03.044Z","data":{"branch":"master","commitHash":"a49e01b9a11f6941d79d4a4bce4214ef90193d02","message":"Merge
+        branch ''code-coverage''","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595aeee73c2e150001977cad","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":8,"stepName":"store","runId":"595aeee73c2e150001977cac"},"id":"595aeee73c2e150001977cae","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:27:30.640Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"totalSteps":11,"currentStep":11,"stepName":"store","runId":"595aef023c2e150001977cc3"},"id":"595aeee73c2e150001977caf","parentItem":"595aeee73c2e150001977cae","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T01:28:31.449Z"}],"startedAt":"2017-07-04T01:27:16.486Z","trigger":"git","updatedAt":"2017-07-04T01:28:31.447Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 09:28:56 GMT
+recorded_with: VCR 3.0.3

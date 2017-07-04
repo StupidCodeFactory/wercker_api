@@ -25,14 +25,14 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 04 Jul 2017 00:30:56 GMT
+      - Tue, 04 Jul 2017 01:28:48 GMT
       Etag:
       - W/"2-d4cbb29"
       Server:
       - nginx
       Set-Cookie:
-      - express.sid=s%3Aetwm27QuMgfgP8mooliO2-S_X3HI8sEq.4%2FLeemrPmLTG53dQfAaClop7RjY%2FdMmZiFKqAEK9Hp4;
-        Path=/; Expires=Tue, 18 Jul 2017 00:30:56 GMT; HttpOnly; Secure
+      - express.sid=s%3ASA8Is9uzPm-fGaLTY3Q0Vx22bLgFXhHi.lZWOwQfL9NUme8byWrI8xo81jdbUlAvREhOQYsPPklY;
+        Path=/; Expires=Tue, 18 Jul 2017 01:28:48 GMT; HttpOnly; Secure
       Strict-Transport-Security:
       - max-age=10886400; includeSubDomains; preload
       X-Content-Type-Options:
@@ -49,5 +49,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Tue, 04 Jul 2017 00:30:56 GMT
+  recorded_at: Tue, 04 Jul 2017 01:28:48 GMT
 recorded_with: VCR 3.0.3

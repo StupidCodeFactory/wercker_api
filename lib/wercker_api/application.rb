@@ -1,41 +1,4 @@
 module WerckerAPI
-  class Meta
-    include Virtus.model
-    attribute :username,        String
-    attribute :type,            String
-    attribute :werckerEmployee, Boolean
-
-    def wercker_employee
-      werckerEmployee
-    end
-  end
-
-  class Avatar
-    include Virtus.model
-    attribute :gravatar, String
-
-  end
-  class Owner
-    include Virtus.model
-    attribute :type,   String
-    attribute :userId, String
-    attribute :name,   String
-    attribute :avatar, Avatar
-    attribute :meta,   Meta
-
-    def user_id
-      userId
-    end
-  end
-
-  class SCM
-    include Virtus.model
-    attribute :type,       String
-    attribute :owner,      String
-    attribute :domain,     String
-    attribute :repository, String
-  end
-
   class Settings
     include Virtus.model
     attribute :privacy,         String
@@ -65,6 +28,9 @@ module WerckerAPI
     attribute :allowedActions, Array[String]
     attribute :theme,          String
     attribute :settings,       Settings
+    attribute :privacy,        String
+    attribute :stack,          Integer
+    attribute :userId,         String
 
     def badge_key
       badgeKey

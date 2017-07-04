@@ -42,6 +42,14 @@ EOM
       request build_get_request(Application::Deploy::INDEX[api_version, user_name, application]), Application::DeployCollection
     end
 
+    def application_workflows(application_id)
+      request build_get_request(Application::Workflow::INDEX[api_version], applicationId: application_id), Application::WorkflowCollection
+    end
+
+    def application_workflow(workflow_id)
+      request build_get_request(Application::Workflow::SHOW[api_version, workflow_id]), Application::Workflow
+    end
+
     private
     attr_accessor :api_token, :api_version
 
