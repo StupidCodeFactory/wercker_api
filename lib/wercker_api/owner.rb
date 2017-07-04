@@ -29,4 +29,7 @@ module WerckerAPI
       userId
     end
   end
+
+  class User < Owner; end
+
 end

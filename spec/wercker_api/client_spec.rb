@@ -73,7 +73,7 @@ EOM
     describe '#application_workflows' do
       let(:application_id) { '595a6b1ba01812010072fc1c' }
       it 'fetches application workflows', vcr: { cassette_name: :application_workflows } do
-        expect(subject.application_workflows(application_id)).to all(be_instance_of(WerckerAPI::Application::WorkflowCollection))
+        expect(subject.application_workflows(application_id)).to be_instance_of(WerckerAPI::Application::WorkflowCollection)
       end
     end
 
@@ -84,5 +84,31 @@ EOM
       end
     end
 
+    describe '#runs' do
+      describe 'with an application id' do
+        let(:application_id) { '595a6b1ba01812010072fc1c' }
+
+        it 'fetches an application runs', vcr: { cassette_name: :application_runs } do
+          expect(subject.runs(application_id: application_id)).to be_instance_of(WerckerAPI::RunCollection)
+        end
+
+      end
+
+      describe 'with an pipeline id' do
+        let(:pipeline_id) { '595a6b1b24ac030100da5307' }
+
+        it 'fetches a pipeline runs', vcr: { cassette_name: :pipeline_runs } do
+          expect(subject.runs(pipeline_id: pipeline_id)).to be_instance_of(WerckerAPI::RunCollection)
+        end
+      end
+    end
+
+    describe '#run' do
+      let(:run_id) { '595aef023c2e150001977cc3' }
+
+      it 'fetches a run', vcr: { cassette_name: :run } do
+        expect(subject.run(run_id)).to be_instance_of(WerckerAPI::Run)
+      end
+    end
   end
 end

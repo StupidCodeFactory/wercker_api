@@ -11,8 +11,7 @@ module WerckerAPI
         commitHash
       end
     end
-
-    class Pipeline
+    class PipelineItem
       include Virtus.model
 
       attribute :targetName,  String
@@ -47,7 +46,7 @@ module WerckerAPI
     class Item
       include Virtus.model
 
-      attribute :data,      Pipeline
+      attribute :data,      PipelineItem
       attribute :id,        String
       attribute :progress,  Integer
       attribute :result,    String
@@ -60,7 +59,6 @@ module WerckerAPI
       end
     end
 
-    class User < Owner; end
     class Workflow
       INDEX = -> (version) { "/api/#{version}/workflows" }
       SHOW = -> (version, workflow_id) { "/api/#{version}/workflows/#{workflow_id}" }

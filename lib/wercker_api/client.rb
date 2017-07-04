@@ -50,6 +50,19 @@ EOM
       request build_get_request(Application::Workflow::SHOW[api_version, workflow_id]), Application::Workflow
     end
 
+    def runs(application_id: nil, pipeline_id: nil)
+      params = if application_id
+                 { applicationId: application_id }
+               elsif pipeline_id
+                 { pipelineId: pipeline_id }
+               end
+      request build_get_request(Run::INDEX[api_version], params), RunCollection
+    end
+
+    def run(run_id)
+      request build_get_request(Run::SHOW[api_version, run_id]), Run
+    end
+
     private
     attr_accessor :api_token, :api_version
 

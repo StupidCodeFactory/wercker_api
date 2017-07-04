@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/runs/595aef023c2e150001977cc3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 11:00:56 GMT
+      Etag:
+      - W/"cjqVPJI/WIGzAybP/jp6qA=="
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3ApJIXa0A4el_i51HcgqkQf2MWM9cR93b0.r8hQlc9vD2ZHiCdI%2Bn1zJjCqCkdXrQvjlI2DsqyvfhI;
+        Path=/; Expires=Tue, 18 Jul 2017 11:00:56 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"595aef023c2e150001977cc3","url":"https://app.wercker.com/api/v3/runs/595aef023c2e150001977cc3","branch":"master","commitHash":"a49e01b9a11f6941d79d4a4bce4214ef90193d02","createdAt":"2017-07-04T01:27:30.634Z","envVars":[],"finishedAt":"2017-07-04T01:28:19.345Z","message":"Auto
+        trigger from Pipeline \"build\" to Pipeline \"deploy\"","commits":[{"_id":"595aeee73c2e150001977cb0","commit":"c5912ba0343b0547b46bed3988d47746263046bd","message":"bump","by":"yann
+        marquet"},{"_id":"595aeee73c2e150001977cb1","commit":"a49e01b9a11f6941d79d4a4bce4214ef90193d02","message":"Merge
+        branch ''code-coverage''","by":"yann marquet"}],"progress":100,"result":"passed","sourceRun":{"id":"595aeee73c2e150001977cac","url":"https://app.wercker.com/api/v3/runs/595aeee73c2e150001977cac","branch":"master","commitHash":"a49e01b9a11f6941d79d4a4bce4214ef90193d02","createdAt":"2017-07-04T01:27:03.125Z","finishedAt":"2017-07-04T01:27:23.507Z","message":"Merge
+        branch ''code-coverage''","progress":100,"result":"passed","startedAt":"2017-07-04T01:27:03.211Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}},"startedAt":"2017-07-04T01:27:30.666Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595aeb089a634a010023715e","url":"https://app.wercker.com/api/v3/pipelines/595aeb089a634a010023715e","createdAt":"2017-07-04T01:10:32.728Z","name":"deploy","permissions":"read","pipelineName":"deploy","setScmProviderStatus":false,"type":"pipeline"},"pullRequest":{}}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 11:00:56 GMT
+recorded_with: VCR 3.0.3
