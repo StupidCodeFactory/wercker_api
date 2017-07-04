@@ -43,20 +43,6 @@ RSpec.describe WerckerAPI::Application::Workflow, vcr: { cassette_name: :applica
       end
     end
     describe '#application' do
-      #       "owner" => {
-      #   "type" => "wercker",
-      #   "name" => "yann",
-      #   "avatar" => {
-      #     "gravatar" => "a4346267407e112504b5dab1dac534ea"
-      #   },
-      #   "userId" => "56a4de11212b43b24e0b6175",
-      #   "meta" => {
-      #     "username" => "StupidCodeFactory",
-      #     "type" => "user",
-      #     "werckerEmployee" => false
-      #   }
-      # },
-
       specify do
         expect(subject.application).to have_attributes(
           id:        '595a6b1ba01812010072fc1c',
