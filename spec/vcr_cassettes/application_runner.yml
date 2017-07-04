@@ -1,0 +1,115 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/applications/StupidCodeFactory/wercker_api
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 16:32:07 GMT
+      Etag:
+      - W/"6EhHuDHWd41hW32Z7TW/qQ=="
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3AORkshKdK-X7Mq1Okr71R2CaT1sBPYSM7.dRUh12d7hvowfBaRWKbHZpoLY1GGd53FIcUuPm0qOnE;
+        Path=/; Expires=Tue, 18 Jul 2017 16:32:07 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"595a6b1ba01812010072fc1c","url":"https://app.wercker.com/api/v3/applications/stupidcodefactory/wercker_api","name":"wercker_api","owner":{"type":"wercker","name":"yann","avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user","werckerEmployee":false}},"builds":"https://app.wercker.com/api/v3/applications/stupidcodefactory/wercker_api/builds","deploys":"https://app.wercker.com/api/v3/applications/stupidcodefactory/wercker_api/deploys","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"},"badgeKey":"15fd697b0b3ff854e408a5c256e6737b","createdAt":"2017-07-03T16:04:43.374Z","updatedAt":"2017-07-03T20:29:42.731Z","allowedActions":["delete_project","update_project","transfer_ownership_project","update_checkout_key","migrate_application","list_authorizations","create_authorization","read_authorization","update_authorization","delete_authorization","read_heroku_collaborators","send_invites","create_key","delete_key","update_key","update_teams","delete_team","update_org","create_member","delete_member","update_member","create_team_members","delete_team_members","org_create_app","org_transferownership_app","org_transfer_apiUser_app","update_project_button","cancel_customer","create_customer","get_customer","update_customer","get_billing","update_billing","update_extended_permissions","get_invoice","list_invoices","list_orginvitations","create_orginvitation","get_orginvitation","delete_orginvitation","resend_orginvitation","deploy_build","reset_deploy_warnings","create_deploytarget","create_target","update_target","delete_target","create_target_trigger","update_target_trigger","read_target_trigger","delete_target_trigger","read_deploytarget","abort_deploy","update_deploytarget","delete_deploytarget","read_deploytargetsettings","application_envcollection","list_key","read_key","create_env_var","update_env_var","delete_env_var","build_project","rebuild_build","abort_build","read_deploy","list_deploysteps","read_deploystep","read_deploytarget_logs","add_pullrequest","receive_push","autodeploy_build","fix_webhook","clear_cache_project","list_teams","list_members","org_read_wallItem","read_docker_image","create_run","abort_run","list_extended_permissions","read_env_var","read_project","list_builds","read_build","list_runs","read_run","list_runsteps","read_runstep","list_buildsteps","read_buildstep","follow_project","unfollow_project","list_targets","read_target","list_workflows","list_collaborators","list_comment","create_comment"],"theme":"Amethyst","settings":{"privacy":"public","stack":6,"ignoredBranches":["a-dummy-branch"]}}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 16:32:07 GMT
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/workflows?applicationId=595a6b1ba01812010072fc1c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 16:32:08 GMT
+      Etag:
+      - W/"LeHTlPglbpk5Q1RPiB2fCQ=="
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3Ax11jhg7EyjHl6mvRAQ8IakNaBO0Gf0ei.HNLuN2tG%2BoaM9%2FZAVtmxMYryg1FlVB9VqHAhg%2Btr44s;
+        Path=/; Expires=Tue, 18 Jul 2017 16:32:08 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://app.wercker.com/api/v3/workflows/595bb6a83c2e15000198ee16","createdAt":"2017-07-04T15:39:20.408Z","data":{"branch":"trigger-a-run","commitHash":"4b4f4102382d2f43ebb2d57c95571a06787c4ba7","message":"bump
+        version","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb6a83c2e15000198ee16","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":8,"stepName":"store","runId":"595bb6a83c2e15000198ee15"},"id":"595bb6a83c2e15000198ee17","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T15:39:38.138Z"}],"startedAt":"2017-07-04T15:39:22.212Z","trigger":"git","updatedAt":"2017-07-04T15:39:38.137Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb6823c2e15000198edf4","createdAt":"2017-07-04T15:38:42.634Z","data":{"branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","message":"Merge
+        pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger and Abort
+        APIs","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb6823c2e15000198edf4","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":8,"stepName":"store","runId":"595bb6823c2e15000198edf3"},"id":"595bb6823c2e15000198edf5","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T15:39:05.961Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"totalSteps":11,"currentStep":10,"stepName":"configure
+        release","runId":"595bb69a3c2e15000198edfc"},"id":"595bb6823c2e15000198edf6","parentItem":"595bb6823c2e15000198edf5","progress":90,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T15:39:32.399Z"}],"startedAt":"2017-07-04T15:38:44.530Z","trigger":"git","updatedAt":"2017-07-04T15:39:32.395Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb5f63c2e15000198ecef","createdAt":"2017-07-04T15:36:22.328Z","data":{"branch":"trigger-a-run","commitHash":"957af253c96ecb396e2bf29ecdc52544b37be4dd","message":"Trigger
+        and Abort APIs","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb5f63c2e15000198ecef","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":8,"stepName":"store","runId":"595bb5f63c2e15000198ecee"},"id":"595bb5f63c2e15000198ecf0","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T15:36:45.912Z"}],"startedAt":"2017-07-04T15:36:24.514Z","trigger":"git","updatedAt":"2017-07-04T15:36:45.908Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb5b73c2e15000198eccc","createdAt":"2017-07-04T15:35:19.998Z","data":{"branch":"master","commitHash":"3f211c1e307be6d0af378bce8c3aa2f5a9c2f810","message":"bump
+        minor verions","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb5b73c2e15000198eccc","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595bb5b73c2e15000198eccb"},"id":"595bb5b73c2e15000198eccd","progress":87,"result":"aborted","status":"finished","type":"run","updatedAt":"2017-07-04T15:35:36.466Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"runId":null},"id":"595bb5b73c2e15000198ecce","parentItem":"595bb5b73c2e15000198eccd","progress":0,"result":"unknown","status":"notstarted","type":"run","updatedAt":"2017-07-04T16:32:08.292Z"}],"startedAt":"2017-07-04T15:35:22.165Z","trigger":"git","updatedAt":"2017-07-04T15:35:36.464Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb585e7c46c00015b1d5c","createdAt":"2017-07-04T15:34:29.096Z","data":{"branch":"master","commitHash":"3f211c1e307be6d0af378bce8c3aa2f5a9c2f810","message":"bump
+        minor verions","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb585e7c46c00015b1d5c","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595bb584e7c46c00015b1d5b"},"id":"595bb585e7c46c00015b1d5d","progress":87,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T15:34:42.793Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"runId":null},"id":"595bb585e7c46c00015b1d5e","parentItem":"595bb585e7c46c00015b1d5d","progress":0,"result":"unknown","status":"notstarted","type":"run","updatedAt":"2017-07-04T16:32:08.293Z"}],"startedAt":"2017-07-04T15:34:31.024Z","trigger":"git","updatedAt":"2017-07-04T15:34:42.792Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb56f3c2e15000198ec6e","createdAt":"2017-07-04T15:34:07.764Z","data":{"branch":"master","commitHash":"3f211c1e307be6d0af378bce8c3aa2f5a9c2f810","message":"bump
+        minor verions","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb56f3c2e15000198ec6e","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595bb56f3c2e15000198ec6d"},"id":"595bb56f3c2e15000198ec6f","progress":87,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T15:34:23.907Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"runId":null},"id":"595bb56f3c2e15000198ec70","parentItem":"595bb56f3c2e15000198ec6f","progress":0,"result":"unknown","status":"notstarted","type":"run","updatedAt":"2017-07-04T16:32:08.293Z"}],"startedAt":"2017-07-04T15:34:09.874Z","trigger":"git","updatedAt":"2017-07-04T15:34:23.904Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb5341ee20400013ba706","createdAt":"2017-07-04T15:33:08.843Z","data":{"branch":"master","commitHash":"3f211c1e307be6d0af378bce8c3aa2f5a9c2f810","message":"bump
+        minor verions","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb5341ee20400013ba706","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595bb5341ee20400013ba705"},"id":"595bb5341ee20400013ba707","progress":87,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T15:33:31.406Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"runId":null},"id":"595bb5341ee20400013ba708","parentItem":"595bb5341ee20400013ba707","progress":0,"result":"unknown","status":"notstarted","type":"run","updatedAt":"2017-07-04T16:32:08.294Z"}],"startedAt":"2017-07-04T15:33:11.302Z","trigger":"git","updatedAt":"2017-07-04T15:33:31.399Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb476e7c46c00015b1d2a","createdAt":"2017-07-04T15:29:58.850Z","data":{"branch":"master","commitHash":"3f211c1e307be6d0af378bce8c3aa2f5a9c2f810","message":"bump
+        minor verions","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb476e7c46c00015b1d2a","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595bb476e7c46c00015b1d29"},"id":"595bb476e7c46c00015b1d2b","progress":87,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T15:30:19.697Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"runId":null},"id":"595bb476e7c46c00015b1d2c","parentItem":"595bb476e7c46c00015b1d2b","progress":0,"result":"unknown","status":"notstarted","type":"run","updatedAt":"2017-07-04T16:32:08.294Z"}],"startedAt":"2017-07-04T15:30:01.118Z","trigger":"git","updatedAt":"2017-07-04T15:30:19.695Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595bb3cee7c46c00015b1d11","createdAt":"2017-07-04T15:27:10.148Z","data":{"branch":"master","commitHash":"3f211c1e307be6d0af378bce8c3aa2f5a9c2f810","message":"bump
+        minor verions","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595bb3cee7c46c00015b1d11","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":7,"stepName":"rspec","runId":"595bb3cce7c46c00015b1d10"},"id":"595bb3cee7c46c00015b1d12","progress":87,"result":"failed","status":"finished","type":"run","updatedAt":"2017-07-04T15:27:26.026Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"runId":null},"id":"595bb3cee7c46c00015b1d13","parentItem":"595bb3cee7c46c00015b1d12","progress":0,"result":"unknown","status":"notstarted","type":"run","updatedAt":"2017-07-04T16:32:08.295Z"}],"startedAt":"2017-07-04T15:27:12.139Z","trigger":"git","updatedAt":"2017-07-04T15:27:26.016Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}},{"url":"https://app.wercker.com/api/v3/workflows/595b7e6b3c2e1500019879ab","createdAt":"2017-07-04T11:39:23.135Z","data":{"branch":"master","commitHash":"3f211c1e307be6d0af378bce8c3aa2f5a9c2f810","message":"bump
+        minor verions","scm":{"type":"git","owner":"StupidCodeFactory","domain":"github.com","repository":"wercker_api"}},"id":"595b7e6b3c2e1500019879ab","items":[{"data":{"targetName":"build","pipelineId":"595a6b1b24ac030100da5307","restricted":false,"totalSteps":8,"currentStep":8,"stepName":"store","runId":"595b7e6b3c2e1500019879aa"},"id":"595b7e6b3c2e1500019879ac","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T11:39:44.599Z"},{"data":{"targetName":"deploy","pipelineId":"595aeb089a634a010023715e","restricted":false,"totalSteps":11,"currentStep":11,"stepName":"store","runId":"595b7e803c2e1500019879e4"},"id":"595b7e6b3c2e1500019879ad","parentItem":"595b7e6b3c2e1500019879ac","progress":100,"result":"passed","status":"finished","type":"run","updatedAt":"2017-07-04T11:40:11.050Z"}],"startedAt":"2017-07-04T11:39:25.668Z","trigger":"git","updatedAt":"2017-07-04T11:40:11.025Z","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"stupidcodefactory","type":""},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"}}]'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 16:32:08 GMT
+recorded_with: VCR 3.0.3

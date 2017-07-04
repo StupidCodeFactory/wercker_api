@@ -15,5 +15,6 @@ require "wercker_api/application/deploy_collection"
 require "wercker_api/application/workflow"
 require "wercker_api/application/workflow_collection"
 require "wercker_api/client"
+require "wercker_api/pipeline_runner"
 
 module WerckerAPI; end
