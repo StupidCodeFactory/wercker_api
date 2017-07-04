@@ -1,3 +1,6 @@
+[![wercker status](https://app.wercker.com/status/15fd697b0b3ff854e408a5c256e6737b/s/master "wercker status")](https://app.wercker.com/project/byKey/15fd697b0b3ff854e408a5c256e6737b)
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+[![Test Coverage](https://codeclimate.com/github/codeclimate/codeclimate/badges/coverage.svg)](https://codeclimate.com/github/codeclimate/codeclimate/coverage)
 # WerckerApi
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wercker_api`. To experiment with that code, run `bin/console` for an interactive prompt.

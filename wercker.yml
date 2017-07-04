@@ -5,7 +5,7 @@ build:
     - script:
         name: rspec
         code: bundle exec rspec
-deploy-pre-release:
+deploy:
   steps:
     - bundle-install
     - add-ssh-key:
