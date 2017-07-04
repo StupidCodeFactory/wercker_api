@@ -10,9 +10,9 @@ build:
     - script:
         name: rspec
         code: |
-          cc-test-reporter before-build
+          ./cc-test-reporter before-build
           bundle exec rspec
-          cc-test-reporter after-build --exit-code $?
+          ./cc-test-reporter after-build --exit-code $?
 deploy:
   steps:
     - bundle-install
