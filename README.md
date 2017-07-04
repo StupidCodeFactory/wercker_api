@@ -1,11 +1,9 @@
 [![wercker status](https://app.wercker.com/status/15fd697b0b3ff854e408a5c256e6737b/s/master "wercker status")](https://app.wercker.com/project/byKey/15fd697b0b3ff854e408a5c256e6737b)
 [![Code Climate](https://codeclimate.com/github/StupidCodeFactory/wercker_api/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 [![Test Coverage](https://codeclimate.com/github/StupidCodeFactory/wercker_api/badges/coverage.svg)](https://codeclimate.com/github/codeclimate/codeclimate/coverage)
-# WerckerApi
+# WerckerAPI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wercker_api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Thin ruby wrapper around [wercker API](http://devcenter.wercker.com/docs/api)
 
 ## Installation
 
@@ -23,9 +21,15 @@ Or install it yourself as:
 
     $ gem install wercker_api
 
-## Usage
+# Usage #
 
-TODO: Write usage instructions here
+Generate an API token and either pass it as an argument to the `WerckerAPI::Client` or use the environment variable WERCKER\_API\_TOKEN
+```ruby
+
+    client = WerckerAPI::Client.new(token)
+    client.applications('StupidCodeFactory') # => ApplicationCollection
+
+```
 
 ## Development
 
