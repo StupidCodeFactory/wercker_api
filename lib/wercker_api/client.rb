@@ -31,7 +31,7 @@ EOM
     end
 
     def update_application(user_name, application, branches)
-      request build_put_request(Application::SHOW[api_version, user_name, application], { ignoredBranches: branches }), Application
+      request build_patch_request(Application::SHOW[api_version, user_name, application], { ignoredBranches: branches }), Application
     end
 
     def application_builds(user_name , application)
@@ -63,6 +63,14 @@ EOM
       request build_get_request(Run::SHOW[api_version, run_id]), Run
     end
 
+    def trigger_run(pipeline_id)
+      request build_post_request(Run::TRIGGER[api_version], pipelineId: pipeline_id), Run
+    end
+
+    def abort_run(run_id)
+      request build_put_request(Run::ABORT[api_version, run_id]), Run
+    end
+
     private
     attr_accessor :api_token, :api_version
 
@@ -86,8 +94,22 @@ EOM
       authorise_request(Net::HTTP::Get.new(uri))
     end
 
-    def build_put_request(uri, params)
-      request      = Net::HTTP::Patch.new(URI::HTTP.build(path: uri))
+    def build_put_request(uri, params = {})
+      request = Net::HTTP::Put.new(URI::HTTP.build(path: uri))
+      build_request_with_body(request, params)
+    end
+
+    def build_patch_request(uri, params)
+      request = Net::HTTP::Patch.new(URI::HTTP.build(path: uri))
+      build_request_with_body(request, params)
+    end
+
+    def build_post_request(uri, params)
+      request = Net::HTTP::Post.new(URI::HTTP.build(path: uri))
+      build_request_with_body(request, params)
+    end
+
+    def build_request_with_body(request, params)
       request.body = JSON.dump(params)
       request['Content-Type'] = 'application/json'
       authorise_request(request)

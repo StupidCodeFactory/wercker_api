@@ -34,6 +34,7 @@ EOM
   describe 'API' do
     let(:user_name)   { 'StupidCodeFactory' }
     let(:application) { 'wercker_api' }
+    let(:pipeline_id) { '595a6b1b24ac030100da5307' }
 
     describe 'GET #applications' do
       it 'fetches applications', vcr: { cassette_name: :fetch_applications } do
@@ -95,7 +96,7 @@ EOM
       end
 
       describe 'with an pipeline id' do
-        let(:pipeline_id) { '595a6b1b24ac030100da5307' }
+
 
         it 'fetches a pipeline runs', vcr: { cassette_name: :pipeline_runs } do
           expect(subject.runs(pipeline_id: pipeline_id)).to be_instance_of(WerckerAPI::RunCollection)
@@ -108,6 +109,19 @@ EOM
 
       it 'fetches a run', vcr: { cassette_name: :run } do
         expect(subject.run(run_id)).to be_instance_of(WerckerAPI::Run)
+      end
+    end
+
+    describe '#trigger_run' do
+      it 'triggers a run', vcr: { cassette_name: :trigger_run } do
+        expect(subject.trigger_run(pipeline_id)).to be_instance_of(WerckerAPI::Run)
+      end
+    end
+
+    describe '#abort_run' do
+      let(:run) { subject.trigger_run(pipeline_id) }
+      it 'aborts a run', vcr: { cassette_name: :abort_run } do
+        expect(subject.abort_run(run.id)).to be_instance_of(WerckerAPI::Run)
       end
     end
   end
