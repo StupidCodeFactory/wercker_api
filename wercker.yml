@@ -8,6 +8,10 @@ build:
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
     - script:
+        name: env
+        code: |
+          env
+    - script:
         name: rspec
         code: |
           ./cc-test-reporter before-build
@@ -32,7 +36,7 @@ deploy:
     - script:
         name: configure gem
         code: |
-          echo -e  "---\n:rubygems_api_key: $GEM_API_KEY" >> ~/.gem/credentials
+          echo -e  "---\n:rubygems_api_key: $WERCKER_API_TOKEN" >> ~/.gem/credentials
           chmod 0600 ~/.gem/credentials
     - script:
         name: configure bump and tag
