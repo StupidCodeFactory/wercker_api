@@ -35,4 +35,4 @@ deploy-pre-release:
         code: |
           set -x
           rake build
-          rake --trace release
+          rake --trace release[origin]
