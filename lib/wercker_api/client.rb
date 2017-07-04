@@ -95,8 +95,9 @@ EOM
       request build_get_request(Run::SHOW[api_version, run_id]), Run
     end
 
-    def trigger_run(pipeline_id)
-      request build_post_request(Run::TRIGGER[api_version], pipelineId: pipeline_id), Run
+    def trigger_run(pipeline_id, params = {})
+      params[:pipelineId] = pipeline_id
+      request build_post_request(Run::TRIGGER[api_version], params), Run
     end
 
     def abort_run(run_id)
