@@ -5,7 +5,7 @@ http_interactions:
     uri: https://app.wercker.com/api/v3/runs
     body:
       encoding: UTF-8
-      string: '{"pipelineId":"595a470724ac030100da3fe9"}'
+      string: '{"pipelineId":"595a6b1b24ac030100da5307"}'
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -27,12 +27,12 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 04 Jul 2017 17:16:52 GMT
+      - Tue, 04 Jul 2017 22:16:58 GMT
       Server:
       - nginx
       Set-Cookie:
-      - express.sid=s%3ApjkB4IU6_cOO03b64gvrQE4ViJnAQRFb.62OlhFywDiNr5EBY4iqSyM4urIrQ%2Bgujq2XDkNFKD6k;
-        Path=/; Expires=Tue, 18 Jul 2017 17:16:52 GMT; HttpOnly; Secure
+      - express.sid=s%3AN4k0lL1bsMpi4l5FznsUj-HdPd1_WjTJ.w27xFPsqCSxy6W9m1JedC0ZMguivnc5c%2BeawE%2F2yEg0;
+        Path=/; Expires=Tue, 18 Jul 2017 22:16:57 GMT; HttpOnly; Secure
       Strict-Transport-Security:
       - max-age=10886400; includeSubDomains; preload
       X-Content-Type-Options:
@@ -42,16 +42,121 @@ http_interactions:
       X-Powered-By:
       - Express
       X-Wercker-Trace-Id:
-      - 58b82ccd63f46190
+      - 3b0a41d1c498c136
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"595bcd843c2e1500019911bd","url":"https://app.wercker.com/api/v3/runs/595bcd843c2e1500019911bd","branch":"master","commitHash":"76a683e1eec39243d48264a46687398d1600ee79","createdAt":"2017-07-04
-        17:16:52.796629368 +0000 UTC","message":"werckerify app","result":"unknown","status":"notstarted","user":{"type":"wercker","name":"yann","userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"}},"pipeline":{"id":"595a470724ac030100da3fe9","url":"https://app.wercker.com/api/v3/pipelines/595a470724ac030100da3fe9","createdAt":"2017-07-03
-        13:30:47.344 +0000 UTC","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}}'
+      string: '{"id":"595c13d9e7c46c00015b224e","url":"https://app.wercker.com/api/v3/runs/595c13d9e7c46c00015b224e","branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","createdAt":"2017-07-04
+        22:16:58.110804376 +0000 UTC","message":"Merge pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger
+        and Abort APIs","result":"unknown","status":"notstarted","user":{"type":"wercker","name":"yann","userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"}},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03
+        16:04:43.73 +0000 UTC","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"}}'
     http_version: 
-  recorded_at: Tue, 04 Jul 2017 17:16:53 GMT
+  recorded_at: Tue, 04 Jul 2017 22:16:58 GMT
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/runs/595c13d9e7c46c00015b224e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 22:17:08 GMT
+      Etag:
+      - W/"37d-281859fb"
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3AIubDZJuVtAQqEUQerex_PTSpayAPbxn1.Hu0uY0bl2xqSqh2fLWxU%2B%2BvVIhr9OUjvzyMZmMIY04c;
+        Path=/; Expires=Tue, 18 Jul 2017 22:17:08 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"595c13d9e7c46c00015b224e","url":"https://app.wercker.com/api/v3/runs/595c13d9e7c46c00015b224e","branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","createdAt":"2017-07-04T22:16:58.110Z","envVars":[],"message":"Merge
+        pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger and Abort
+        APIs","commits":[],"progress":62,"result":"unknown","startedAt":"2017-07-04T22:16:58.117Z","status":"running","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"},"pullRequest":{}}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 22:17:09 GMT
+- request:
+    method: get
+    uri: https://app.wercker.com/api/v3/runs/595c13d9e7c46c00015b224e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Bearer some_api_token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 04 Jul 2017 22:17:19 GMT
+      Etag:
+      - W/"3a5-9fa83a2b"
+      Server:
+      - nginx
+      Set-Cookie:
+      - express.sid=s%3A7n10B3QHQHoKBYGNh25wT2yeCcT5SQ9y.zTcb3uVyiINVXHn9GXPAPI2UbJMjR4sX8AcnmJRtRRc;
+        Path=/; Expires=Tue, 18 Jul 2017 22:17:19 GMT; HttpOnly; Secure
+      Strict-Transport-Security:
+      - max-age=10886400; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Powered-By:
+      - Express
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"595c13d9e7c46c00015b224e","url":"https://app.wercker.com/api/v3/runs/595c13d9e7c46c00015b224e","branch":"master","commitHash":"5850b55cd1d2aee3c73c29337fe4f7d6f27feb65","createdAt":"2017-07-04T22:16:58.110Z","envVars":[],"finishedAt":"2017-07-04T22:17:11.849Z","message":"Merge
+        pull request #5 from StupidCodeFactory/trigger-a-run\n\nTrigger and Abort
+        APIs","commits":[],"progress":87,"result":"failed","startedAt":"2017-07-04T22:16:58.117Z","status":"finished","user":{"userId":"56a4de11212b43b24e0b6175","meta":{"username":"StupidCodeFactory","type":"user"},"avatar":{"gravatar":"a4346267407e112504b5dab1dac534ea"},"name":"yann","type":"wercker"},"pipeline":{"id":"595a6b1b24ac030100da5307","url":"https://app.wercker.com/api/v3/pipelines/595a6b1b24ac030100da5307","createdAt":"2017-07-03T16:04:43.730Z","name":"build","permissions":"public","pipelineName":"build","setScmProviderStatus":true,"type":"git"},"pullRequest":{}}'
+    http_version: 
+  recorded_at: Tue, 04 Jul 2017 22:17:19 GMT
 recorded_with: VCR 3.0.3
