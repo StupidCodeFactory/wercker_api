@@ -9,7 +9,6 @@ build:
     - script:
         name: rspec
         code: |
-          sleep 20
           bundle exec rspec
 deploy:
   steps:
