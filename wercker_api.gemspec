@@ -40,4 +40,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'webmock', '~> 3.0.1'
   spec.add_development_dependency 'byebug', '~> 9.0.6'
   spec.add_development_dependency 'awesome_print', '~> 1.8.0'
+  spec.add_development_dependency 'simplecov', '~> 0.14.1'
 end
