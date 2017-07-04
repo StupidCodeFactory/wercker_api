@@ -10,10 +10,8 @@ module WerckerAPI
       workflows   = client.application_workflows application.id
 
       workflows.each do |workflow|
-
         ap workflow
       end
-
     end
 
     private

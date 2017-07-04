@@ -1,10 +1,8 @@
 require 'spec_helper'
 
 RSpec.describe WerckerAPI::Client do
-
   subject { described_class.new(token) }
   let(:token) { nil }
-
 
   describe '#initialize' do
     let(:token) { 'some_token' }
@@ -18,9 +16,9 @@ RSpec.describe WerckerAPI::Client do
         allow(ENV).to receive(:[]).with('WERCKER_API_TOKEN').and_return(nil)
       end
       it 'raises an ArgumentError' do
-        expect {
+        expect do
           subject
-        }.to raise_error(ArgumentError, <<-EOM)
+        end.to raise_error(ArgumentError, <<-EOM)
 A token is required to communicate with the API, please refer to the read me.
 
    client = WerckerAPI::Client.new('2039e0239840239u0239uf0293v2093urbv0293urbv')
@@ -49,14 +47,13 @@ EOM
     end
 
     describe 'PUT #application' do
-      let(:branches)    { ['a-dummy-branch']  }
+      let(:branches) { ['a-dummy-branch'] }
 
       it 'updates the ignored branche', vcr: { cassette_name: :update_application } do
-        expect {
+        expect do
           subject.update_application(user_name, application, branches)
-        }.to change { subject.application(user_name, application).settings.ignored_branches }.from([]).to(['a-dummy-branch'])
+        end.to change { subject.application(user_name, application).settings.ignored_branches }.from([]).to(['a-dummy-branch'])
       end
-
     end
 
     describe 'GET #application_buils' do
@@ -92,12 +89,9 @@ EOM
         it 'fetches an application runs', vcr: { cassette_name: :application_runs } do
           expect(subject.runs(application_id: application_id)).to be_instance_of(WerckerAPI::RunCollection)
         end
-
       end
 
       describe 'with an pipeline id' do
-
-
         it 'fetches a pipeline runs', vcr: { cassette_name: :pipeline_runs } do
           expect(subject.runs(pipeline_id: pipeline_id)).to be_instance_of(WerckerAPI::RunCollection)
         end

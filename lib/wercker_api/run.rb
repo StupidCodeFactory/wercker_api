@@ -1,20 +1,18 @@
 module WerckerAPI
   class Commit
-
     include Virtus.model
 
     attribute :_id,     String
     attribute :commit,  String
     attribute :message, String
     attribute :by,      String
-
   end
 
   class Run
-    INDEX   = -> (version)         { "/api/#{version}/runs" }
-    SHOW    = -> (version, run_id) { "/api/#{version}/runs/#{run_id}" }
-    TRIGGER = -> (version)         { "/api/#{version}/runs" }
-    ABORT   = -> (version, run_id) { "/api/#{version}/runs/#{run_id}/abort" }
+    INDEX   = ->(version)         { "/api/#{version}/runs" }
+    SHOW    = ->(version, run_id) { "/api/#{version}/runs/#{run_id}" }
+    TRIGGER = ->(version)         { "/api/#{version}/runs" }
+    ABORT   = ->(version, run_id) { "/api/#{version}/runs/#{run_id}/abort" }
 
     include Virtus.model
 

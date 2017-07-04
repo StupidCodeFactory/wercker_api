@@ -60,8 +60,8 @@ module WerckerAPI
     end
 
     class Workflow
-      INDEX = -> (version) { "/api/#{version}/workflows" }
-      SHOW = -> (version, workflow_id) { "/api/#{version}/workflows/#{workflow_id}" }
+      INDEX = ->(version) { "/api/#{version}/workflows" }
+      SHOW = ->(version, workflow_id) { "/api/#{version}/workflows/#{workflow_id}" }
 
       include Virtus.model
 

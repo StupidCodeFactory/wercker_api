@@ -11,8 +11,8 @@ module WerckerAPI
   end
 
   class Application
-    INDEX = -> (version, username) { "/api/#{version}/applications/#{username}" }
-    SHOW  = -> (version, username, application) { "/api/#{version}/applications/#{username}/#{application}" }
+    INDEX = ->(version, username) { "/api/#{version}/applications/#{username}" }
+    SHOW  = ->(version, username, application) { "/api/#{version}/applications/#{username}/#{application}" }
 
     include Virtus.model
     attribute :id,             String
@@ -47,6 +47,5 @@ module WerckerAPI
     def allowed_actions
       allowedActions
     end
-
   end
 end

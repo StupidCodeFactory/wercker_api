@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe WerckerAPI::PipelineRunner do
-  let(:client)  { WerckerAPI::Client.new }
+  let(:client) { WerckerAPI::Client.new }
   let(:pipeline_id) { '595a6b1b24ac030100da5307' }
 
   subject { described_class.new(client) }
