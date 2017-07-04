@@ -15,7 +15,7 @@ module WerckerAPI
       while ['running', 'notstarted'].include?(run.status) && !max_attempt_reached?
         sleep delay
         run = client.run(run.id)
-        self.current_attempt += 1
+        @current_attempt += 1
       end
       run
     end
