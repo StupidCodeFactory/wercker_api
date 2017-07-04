@@ -33,4 +33,4 @@ deploy-pre-release:
     - script:
         name: configure release
         code: |
-          rake --trace release[origin]
+          bundle exec gem release
