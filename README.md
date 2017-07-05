@@ -32,11 +32,7 @@ Generate an API token and either pass it as an argument to the `WerckerAPI::Clie
 
 ## API Documentation
 
-`GET /api/v3/applications/:username`
-
-```ruby
-    client.applications
-```
+Full gem documentation on [rubydoc.info](http://www.rubydoc.info/gems/wercker_api) and API reference at [wercker.com](http://devcenter.wercker.com/docs/api)
 
 ## Development
 
