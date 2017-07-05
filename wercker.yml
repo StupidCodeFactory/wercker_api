@@ -38,4 +38,5 @@ deploy:
     - script:
         name: configure release
         code: |
+          bundle exec rake release
           bundle exec gem release
