@@ -141,17 +141,28 @@ EOM
     # Returns an array of run objects.
     #
     #
-    # An `application_id` or a `pipeline_id` is required!
+    # An *application_id*:: or a *pipeline_id*:: is required!
     #
-    # @param application_id [String]
+    # @param application_id [String] The ID of the application.
     # @param pipeline_id [String]
+    # @param [Hash] params Other params passed as a query string to the API
+    # @option params [Integer] :limit Specify how many run objects should be returned. Max: 20, default: 20
+    # @option params [Integer] :skip Skip the first X runs. Min: 1, default: 0
+    # @option params [Integer] :sort Valid values: *creationDateAsc*:: or *creationDateDesc*::. Default *creationDateDesc*::
+    # @option params [Integer] :status Filter by status. Valid values: notstarted, *started*::, *finished*::, *running*::
+    # @option params [Integer] :result Filter by result. Valid values: *aborted*::, *unknown*::, *passed*::, **failed::
+    # @option params [Integer] :branch ilter by branch
+    # @option params [Integer] :pipelineId Filter by pipeline
+    # @option params [Integer] :commit Filter by commit hash
+    # @option params [Integer] :sourceRun  Filter by source run
+    # @option params [Integer] :author  Filter by Wercker username
     # @return WerckerAPI::RunCollection An enumerable yielding a WerckerAPI::Run object
-    def runs(application_id: nil, pipeline_id: nil)
-      params = if application_id
-                 { applicationId: application_id }
-               elsif pipeline_id
-                 { pipelineId: pipeline_id }
-               end
+    def runs(application_id: nil, pipeline_id: nil, params: {})
+      if application_id
+        params[:applicationId] = application_id
+      elsif pipeline_id
+        params[:pipelineId] = pipeline_id
+      end
       request build_get_request(Run::INDEX[api_version], params), RunCollection
     end
 
@@ -176,7 +187,12 @@ EOM
     # It is possible to add environment variables, which will be added to the run. The order of the array will be maintained, which makes it possible to use environment variables that were defined earlier. Any environment variables defined as part of the application or workflow will be overwritten, if using the same key.
     #
     # @param pipeline_id [String]  An id as returned by an API call
-    # @param params [Hash] Other params to pass as in body as query string to the API call
+    # @param [Hash] params Other params to pass as in body as query string to the API call
+    # @option params [String] sourceRunId The *id*:: of the run that should be used as input for this run, including artifacts. This is the same as *chaining*:: a pipeline.
+    # @option params [String] branch The Git *branch*:: that the run should use. If not specified, the default branch will be used.
+    # @option params [String] commitHash The Git commit hash that the run should used. *Requires branch*:: to be set. If not specified, the latest commit is fetched
+    # @option params [String] message The message to use for the run. If not specified, the Git commit message is used.
+    # @option params [Array] envVars Environment variables which should be added to run. Contains objects with *key*:: and *value*:: properties.
     # @return WerckerAPI::Run object
     def trigger_run(pipeline_id, params = {})
       params[:pipelineId] = pipeline_id
