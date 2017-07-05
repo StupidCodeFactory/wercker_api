@@ -1,6 +1,5 @@
 [![wercker status](https://app.wercker.com/status/15fd697b0b3ff854e408a5c256e6737b/s/master "wercker status")](https://app.wercker.com/project/byKey/15fd697b0b3ff854e408a5c256e6737b)
-[![Code Climate](https://codeclimate.com/github/StupidCodeFactory/wercker_api/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
-[![Test Coverage](https://codeclimate.com/github/StupidCodeFactory/wercker_api/badges/coverage.svg)](https://codeclimate.com/github/codeclimate/codeclimate/coverage)
+
 # WerckerAPI
 
 Thin ruby wrapper around [wercker API](http://devcenter.wercker.com/docs/api)
@@ -29,6 +28,14 @@ Generate an API token and either pass it as an argument to the `WerckerAPI::Clie
     client = WerckerAPI::Client.new(token)
     client.applications('StupidCodeFactory') # => ApplicationCollection
 
+```
+
+## API Documentation
+
+`GET /api/v3/applications/:username`
+
+```ruby
+    client.applications
 ```
 
 ## Development
