@@ -24,7 +24,7 @@ deploy:
         code: |
           git config --global user.email "ymarquet@gmail.com"
           git config --global user.name "StupidCodefactory"
-          git config --global push.default simple
+          git config --global push.default matching
           git push --set-upstream origin master
     - script:
         name: configure gem
