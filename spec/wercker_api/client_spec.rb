@@ -106,6 +106,14 @@ EOM
       end
     end
 
+    describe '#run_steps' do
+      let(:run_id) { '595aef023c2e150001977cc3' }
+
+      it "fetches a run's steps ", vcr: { cassette_name: :run_steps } do
+        expect(subject.run_steps(run_id)).to be_instance_of(WerckerAPI::Run::StepCollection)
+      end
+    end
+
     describe '#trigger_run' do
       it 'triggers a run', vcr: { cassette_name: :trigger_run } do
         expect(subject.trigger_run(pipeline_id)).to be_instance_of(WerckerAPI::Run)
