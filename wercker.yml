@@ -2,7 +2,7 @@ box: ruby:2.4.1
 build:
   steps:
     - bundle-install
-    - stupidcodefactory/trigger-pipeline@0.0.3:
+    - stupidcodefactory/trigger-pipeline@0.0.4:
         api-token: $PIPELINE_TOKEN
         pipeline-id: 56a4dfb4212b43b24e0b6635
     - script:
