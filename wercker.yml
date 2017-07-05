@@ -6,6 +6,9 @@ build:
         name: env
         code: |
           env
+    - stupidcodefactory/trigger-pipeline:
+        api-token: $PIPELINE_TOKEN
+        pipeline-id: 56a4dfb4212b43b24e0b6635
     - script:
         name: rspec
         code: |
