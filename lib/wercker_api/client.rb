@@ -20,6 +20,15 @@ EOM
       self.api_version = api_version
     end
 
+    # List user applications
+    #
+    # List all applications owned by the user or organization.
+    # The result will only contain applications that the authenticated user has access to.
+    # If the call is made without a token, only public applications will be returned.
+    #
+    # @param user_name [String] A wercker user name
+    # @param params [Hash] Other params to pass as a query string to the API call
+    # @return [WerckerAPI::ApplicationCollection] An enumerable the yields `WerkerAPI::Application`
     def applications(user_name, params = {})
       request(
         build_get_request(
@@ -28,6 +37,13 @@ EOM
       )
     end
 
+    # Get an application
+    #
+    # Get the details of a single application.
+    #
+    # @param user_name [String] A wercker user name
+    # @param application [String] An wercker application name (probably a repository name).
+    # @return [WerckerAPI::Application] A DAO wrapper around the API response.
     def application(user_name, application)
       request(
         build_get_request(
@@ -37,6 +53,14 @@ EOM
       )
     end
 
+    # Update an application
+    #
+    # Update a single application. Currently it is only possible to change the ignored branches for the application. The updated application will be returned.
+    #
+    # @param user_name [String] A wercker user name
+    # @param application [String] An wercker application name (probably a repository name).
+    # @params branches [Array] An array of branches you want to ignore
+    # @return [WerckerAPI::Application] A DAO wrapper around the API response.
     def update_application(user_name, application, branches)
       request(
         build_patch_request(
@@ -46,6 +70,13 @@ EOM
       )
     end
 
+    # List builds
+    #
+    # Retrieve all builds of an application.
+    #
+    # @param user_name [String] A wercker user name
+    # @param application [String] An wercker application name (probably a repository name).
+    # @return WerckerAPI::Application::BuildCollection An enumerable yielding WerckerAPI::Application::Build objects
     def application_builds(user_name, application)
       request(
         build_get_request(
@@ -55,6 +86,13 @@ EOM
       )
     end
 
+    # List deploys
+    #
+    # Retrieve all deploys of an application.
+    #
+    # @param user_name [String] A wercker user name
+    # @param application [String] An wercker application name (probably a repository name).
+    # @return WerckerAPI::Application::DeployCollection An Enumerable yielding WerckerAPI::Application::Deploy
     def application_deploys(user_name, application)
       request(
         build_get_request(
@@ -64,6 +102,13 @@ EOM
       )
     end
 
+    # Get all workflows
+    #
+    # Get the last 10 workflows.
+    #
+    #
+    # @param application_id [String] A worker application id as returned by an API call
+    # @return WerckerAPI::Application::WorkflowCollection An Enumerable yeilding WerckerAPI::Application::Workflow
     def application_workflows(application_id)
       request(
         build_get_request(
@@ -73,6 +118,13 @@ EOM
       )
     end
 
+    # Get a workflow
+    #
+    # Get the details of a single workflow.
+    #
+    # Returns a workflow object, which contains a collection of runs.
+    # @param workflow_id [String] A wercker workflow id as returned by an API call
+    # @return WerckerAPI::Application::Workflow object
     def application_workflow(workflow_id)
       request(
         build_get_request(
@@ -82,6 +134,18 @@ EOM
       )
     end
 
+    # Get all runs
+    #
+    # Get the last 20 runs for a given pipeline or application.
+    #
+    # Returns an array of run objects.
+    #
+    #
+    # An `application_id` or a `pipeline_id` is required!
+    #
+    # @param application_id [String]
+    # @param pipeline_id [String]
+    # @return WerckerAPI::RunCollection An enumerable yielding a WerckerAPI::Run object
     def runs(application_id: nil, pipeline_id: nil)
       params = if application_id
                  { applicationId: application_id }
@@ -91,15 +155,42 @@ EOM
       request build_get_request(Run::INDEX[api_version], params), RunCollection
     end
 
+    # Get a run
+    #
+    # Get the details of a single run.
+    #
+    # Returns a run object.
+    #
+    # @params run_id [String, Integer] An id as returned by an API call
+    # @return WerckerAPI::Run object
     def run(run_id)
       request build_get_request(Run::SHOW[api_version, run_id]), Run
     end
 
+    # Trigger a new run
+    #
+    # Trigger a new run for an application.
+    #
+    # Returns a run object.
+    #
+    # It is possible to add environment variables, which will be added to the run. The order of the array will be maintained, which makes it possible to use environment variables that were defined earlier. Any environment variables defined as part of the application or workflow will be overwritten, if using the same key.
+    #
+    # @param pipeline_id [String]  An id as returned by an API call
+    # @param params [Hash] Other params to pass as in body as query string to the API call
+    # @return WerckerAPI::Run object
     def trigger_run(pipeline_id, params = {})
       params[:pipelineId] = pipeline_id
       request build_post_request(Run::TRIGGER[api_version], params), Run
     end
 
+    # Abort a run
+    #
+    # Abort an already running run instance.
+    #
+    # Returns an object.
+    #
+    # @param run_id [String] An id as returned by an API call
+    # @return WerckerAPI::Run object
     def abort_run(run_id)
       request build_put_request(Run::ABORT[api_version, run_id]), Run
     end
