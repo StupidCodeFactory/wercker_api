@@ -178,27 +178,6 @@ EOM
       request build_get_request(Run::SHOW[api_version, run_id]), Run
     end
 
-    # Trigger a new run
-    #
-    # Trigger a new run for an application.
-    #
-    # Returns a run object.
-    #
-    # It is possible to add environment variables, which will be added to the run. The order of the array will be maintained, which makes it possible to use environment variables that were defined earlier. Any environment variables defined as part of the application or workflow will be overwritten, if using the same key.
-    #
-    # @param pipeline_id [String]  An id as returned by an API call
-    # @param [Hash] params Other params to pass as in body as query string to the API call
-    # @option params [String] sourceRunId The *id*:: of the run that should be used as input for this run, including artifacts. This is the same as *chaining*:: a pipeline.
-    # @option params [String] branch The Git *branch*:: that the run should use. If not specified, the default branch will be used.
-    # @option params [String] commitHash The Git commit hash that the run should used. *Requires branch*:: to be set. If not specified, the latest commit is fetched
-    # @option params [String] message The message to use for the run. If not specified, the Git commit message is used.
-    # @option params [Array] envVars Environment variables which should be added to run. Contains objects with *key*:: and *value*:: properties.
-    # @return WerckerAPI::Run object
-    def trigger_run(pipeline_id, params = {})
-      params[:pipelineId] = pipeline_id
-      request build_post_request(Run::TRIGGER[api_version], params), Run
-    end
-
     # Get steps for run
     #
     #  Get the steps for a run.
