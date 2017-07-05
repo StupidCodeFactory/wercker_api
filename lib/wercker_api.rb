@@ -6,6 +6,8 @@ require 'wercker_api/owner'
 require 'wercker_api/pipeline'
 require 'wercker_api/run_collection'
 require 'wercker_api/run'
+require "wercker_api/run/step"
+require "wercker_api/run/step_collection"
 require 'wercker_api/application'
 require 'wercker_api/application_collection'
 require 'wercker_api/application/build'

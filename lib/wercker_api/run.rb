@@ -9,10 +9,11 @@ module WerckerAPI
   end
 
   class Run
-    INDEX   = ->(version)         { "/api/#{version}/runs" }
-    SHOW    = ->(version, run_id) { "/api/#{version}/runs/#{run_id}" }
-    TRIGGER = ->(version)         { "/api/#{version}/runs" }
-    ABORT   = ->(version, run_id) { "/api/#{version}/runs/#{run_id}/abort" }
+    INDEX   = -> (version)         { "/api/#{version}/runs" }
+    SHOW    = -> (version, run_id) { "/api/#{version}/runs/#{run_id}" }
+    TRIGGER = -> (version)         { "/api/#{version}/runs" }
+    ABORT   = -> (version, run_id) { "/api/#{version}/runs/#{run_id}/abort" }
+    STEPS   = -> (version, run_id) { "/api/#{version}/runs/#{run_id}/steps" }
 
     include Virtus.model
 

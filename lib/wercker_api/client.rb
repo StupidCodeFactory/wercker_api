@@ -199,6 +199,14 @@ EOM
       request build_post_request(Run::TRIGGER[api_version], params), Run
     end
 
+    def run_steps(run_id)
+      request build_get_request(Run::STEPS[api_version, run_id]), Run::StepCollection
+    end
+
+    def trigger_run(pipeline_id)
+      request build_post_request(Run::TRIGGER[api_version], pipelineId: pipeline_id), Run
+    end
+
     # Abort a run
     #
     # Abort an already running run instance.
