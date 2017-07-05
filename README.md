@@ -30,6 +30,20 @@ Generate an API token and either pass it as an argument to the `WerckerAPI::Clie
 
 ```
 
+# Trigger a pipeline run PipelineRunner #
+
+```ruby
+
+    client = WerckerAPI::Client.new(token)
+
+    # Will poll the build every 60 seconds for 5 times maximum
+    runner = WerckerAPI::PipelineRunner.new(client, max_attempts: 5, delay: 60)
+
+    # Blocking call that polls the pipeline and returns a WorkerAPI::Run instance or raise a WerckerAPI::PipelineRunner::Timeout
+    run = runner.run # => #<0x007fa4b509bcd8 WorkerAPI::Run id: '125344f34v34'...>
+    run.result       # => 'passed'
+```
+
 ## API Documentation
 
 Full gem documentation on [rubydoc.info](http://www.rubydoc.info/gems/wercker_api) and API reference at [wercker.com](http://devcenter.wercker.com/docs/api)
