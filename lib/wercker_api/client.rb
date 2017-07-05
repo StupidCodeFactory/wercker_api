@@ -227,8 +227,9 @@ EOM
     # @option params [String] message The message to use for the run. If not specified, the Git commit message is used.
     # @option params [Array] envVars Environment variables which should be added to run. Contains objects with *key*:: and *value*:: properties.
     # @return WerckerAPI::Run object
-    def trigger_run(pipeline_id)
-      request build_post_request(Run::TRIGGER[api_version], pipelineId: pipeline_id), Run
+    def trigger_run(pipeline_id, params = {})
+      params[:pipelineId] = pipeline_id
+      request build_post_request(Run::TRIGGER[api_version], params), Run
     end
 
     # Abort a run
