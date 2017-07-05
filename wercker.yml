@@ -34,9 +34,8 @@ deploy:
     - script:
         name: configure bump and tag
         code: |
-          bundle exec gem bump
+          bundle exec gem bump -t
     - script:
         name: configure release
         code: |
-          bundle exec rake release
           bundle exec gem release
