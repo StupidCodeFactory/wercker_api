@@ -38,6 +38,8 @@ EOM
         raise Timeout.new(pipeline_id, self) if max_attempt_reached?
         sleep @delay
         run = client.run(run.id)
+        STDOUT.puts run.status
+        puts run.status
         @current_attempt += 1
       end
 
